@@ -1,0 +1,14 @@
+name: Push Image and update latest ver.
+on: 
+  merge:
+    branches:
+      - master
+jobs:
+  build_push_job:
+    runs-on: ubuntu-latest
+    name: Push docker image
+    steps:
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.6.1
+        with:
+          
