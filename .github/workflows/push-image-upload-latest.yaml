@@ -1,20 +1,33 @@
-name: Push Image and update latest ver.
-on: 
+name: Release workflow
+on:
   push:
-    branches:
-      - master
+    branches: master
+  
 jobs:
   build:
-    name: Upload version and Update LATEST
     runs-on: ubuntu-latest
+    environment: docker-maven-ghactions-release
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 8
-        uses: actions/setup-java@v2
-        with:
-          java-version: '8'
-          distribution: 'adopt'
-      - name: Build with Maven
-        run: mvn clean package
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v2.6.1
+    - uses: actions/checkout@v1
+      with:
+        ref: master
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Configure git
+      run: |
+        git config --global committer.email "noreply@github.com"
+        git config --global committer.name "GitHub"
+        git config --global author.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git config --global author.name "${GITHUB_ACTOR}"
+    - name: Checkout master branch
+      run: git checkout master
+    - name: Prepare release
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      run: mvn --batch-mode release:prepare -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
+    - name: Perform release
+      env:
+        DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+      run: mvn --batch-mode release:perform
