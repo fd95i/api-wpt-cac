@@ -11,7 +11,7 @@
 	<groupId>com.wps</groupId>
 	<artifactId>wps-cac</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>wps-cac-api</name>
 	<description>API</description>
 	<properties>
