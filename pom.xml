@@ -96,7 +96,7 @@
 				</executions>
 				<configuration>
 					<username>fd95i</username>
-					<password>6fbf2755-ee7a-4859-b5bc-fcd9ae576ad4</password>
+					<password>38843204a-</password>
 					<repository>fd95i/api-wptcac</repository>
 					<tag>${project.version}</tag>
 				</configuration>
