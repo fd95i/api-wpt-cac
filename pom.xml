@@ -9,11 +9,11 @@
 	</parent>
 	<scm>
 		<developerConnection>scm:git:https://github.com/fd95i/api-wpt-cac</developerConnection>
-		<tag>0.0.18</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<groupId>com.wps</groupId>
 	<artifactId>wps-cac</artifactId>
-	<version>0.0.18</version>
+	<version>0.0.19-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>wps-cac-api</name>
 	<description>API</description>
