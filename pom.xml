@@ -13,7 +13,7 @@
 	</scm>
 	<groupId>com.wps</groupId>
 	<artifactId>wps-cac</artifactId>
-	<version>0.0.3-SNAPSHOTg</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>wps-cac-api</name>
 	<description>API</description>
