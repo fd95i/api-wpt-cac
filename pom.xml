@@ -20,7 +20,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<!--suppress UnresolvedMavenProperty -->
-		<dockerhub.username>${env.DOCKER_HUB_USERNAME}</dockerhub.username>
+		<dockerhub.username>fd95i</dockerhub.username>
 		<dockerhub.repository>api-wptcac</dockerhub.repository>
 	</properties>
 	<dependencies>
