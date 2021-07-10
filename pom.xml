@@ -99,7 +99,7 @@
 					<!--suppress UnresolvedMavenProperty -->
 					<password>${env.DOCKER_HUB_TOKEN}</password>
 					<!--suppress UnresolvedMavenProperty -->
-					<repository>${env.DOCKER_HUB_USERNAME}/${dockerhub.repository}</repository>
+					<repository>fd95i/${dockerhub.repository}</repository>
 					<tag>${project.version}</tag>
 				</configuration>
 			</plugin>
