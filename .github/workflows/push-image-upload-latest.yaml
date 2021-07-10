@@ -1,7 +1,9 @@
 name: Release workflow
 on:
   push:
-    branches: master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   
 jobs:
   build:
@@ -26,8 +28,8 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: "fd95i"
-        password: "6fbf2755-ee7a-4859-b5bc-fcd9ae576ad4"
+        username: ${{GITHUB_ACTOR}}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
     - name: Prepare release
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
