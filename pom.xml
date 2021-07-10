@@ -96,8 +96,7 @@
 				</executions>
 				<configuration>
 					<username>fd95i</username>
-					<!--suppress UnresolvedMavenProperty -->
-					<password>${env.DOCKER_HUB_TOKEN}</password>
+					<password>6fbf2755-ee7a-4859-b5bc-fcd9ae576ad4</password>
 					<repository>fd95i/api-wptcac</repository>
 					<tag>${project.version}</tag>
 				</configuration>
