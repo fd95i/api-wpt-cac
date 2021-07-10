@@ -19,7 +19,8 @@
 	<description>API</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<dockerhub.repository>api-wptcac</dockerhub.repository>
+		<!--suppress UnresolvedMavenProperty -->
+		<dockerhub.repository>${env.DOCKER_HUB_USERNAME}/api-wptcac</dockerhub.repository>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -99,8 +100,7 @@
 					<username>${env.DOCKER_HUB_USERNAME}</username>
 					<!--suppress UnresolvedMavenProperty -->
 					<password>${env.DOCKER_HUB_TOKEN}</password>
-					<!--suppress UnresolvedMavenProperty -->
-					<repository>${env.DOCKER_HUB_USERNAME}/${dockerhub.repository}</repository>
+					<repository>${dockerhub.repository}</repository>
 					<tag>${project.version}</tag>
 				</configuration>
 			</plugin>
