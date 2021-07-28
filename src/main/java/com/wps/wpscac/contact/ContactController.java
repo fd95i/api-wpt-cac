@@ -2,6 +2,7 @@ package com.wps.wpscac.contact;
 
 import com.wps.wpscac.contact.entity.Contact;
 import com.wps.wpscac.contact.repository.ContactRepository;
+import com.wps.wpscac.utils.SendContactMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +27,6 @@ public class ContactController {
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Contact c) {
         contactRepository.save(c);
+        SendContactMail.dispatch(c);
     }
 }
