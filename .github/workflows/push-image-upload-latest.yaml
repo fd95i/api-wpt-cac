@@ -8,8 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: docker-maven-ghactions-release
-    container:
-      options: --user root -v ${{ github.workspace }}:/
     steps:
     - uses: actions/checkout@v1
       with:
