@@ -1,7 +1,7 @@
 name: deploy-test-comment-processor
 on:
   repository_dispatch:
-    types: [deploy-test]
+    types: [test-deploy]
 jobs:
   deployTest:
     runs-on: ubuntu-latest
