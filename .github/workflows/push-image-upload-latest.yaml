@@ -30,6 +30,7 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
     - name: Prepare release
+      options: --user root -v ${{ github.workspace }}:/
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       run: mvn --batch-mode release:prepare -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
