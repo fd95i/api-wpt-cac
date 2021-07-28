@@ -1,4 +1,4 @@
-name: deploy-test-comment-dispatch
+name: deploy-test-comment-processor
 on:
   repository_dispatch:
     types: [deploy-test]
