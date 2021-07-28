@@ -12,4 +12,3 @@ jobs:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           commands: test-deploy
           reactions: false
-          repository: fd95i/
