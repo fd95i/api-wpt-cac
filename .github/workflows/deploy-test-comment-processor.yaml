@@ -1,4 +1,4 @@
-name: deploy-test-comment-processor
+name: Deploy Test Container
 on:
   repository_dispatch:
     types: [test-deploy-command]
