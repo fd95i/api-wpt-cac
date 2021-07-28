@@ -44,7 +44,7 @@ jobs:
       - name: Prepare release
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        run: mvn --batch-mode release:prepare -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
+        run: mvn --batch-mode install
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
