@@ -35,4 +35,3 @@ build/
 
 ### google creds ###
 /tokens
-/src/main/resources/credentials.json
