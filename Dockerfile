@@ -4,7 +4,7 @@ USER wpsuser:wpsuser
 ARG JAR_FILE=target/wps-cac-api.jar
 COPY ${JAR_FILE} app.jar
 WORKDIR /app
-RUN chmod 766 /app
+RUN chown -R wpsuser /app
 ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 8080
 EXPOSE 8888
