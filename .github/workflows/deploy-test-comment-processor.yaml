@@ -44,7 +44,7 @@ jobs:
       - name: Prepare release
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        run: mvn --batch-mode install
+        run: mvn --batch-mode package dockerfile:push@tag-latest
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
