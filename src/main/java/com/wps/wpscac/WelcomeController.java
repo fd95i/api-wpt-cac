@@ -12,7 +12,7 @@ public class WelcomeController {
     public Map<String, String> get() {
         HashMap<String, String> hm = new HashMap<>();
         hm.put("Status", "200");
-        hm.put("Desctiption", "Operational");
+        hm.put("Desctiption", "OK");
         return hm;
     }
 }
