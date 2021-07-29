@@ -3,35 +3,28 @@ on:
   repository_dispatch:
     types: [test-deploy-command]
 jobs:
-  deployTest:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      # Add reaction to the comment
-      - name: Add reaction
+      - name: Add start reaction
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
           comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
           reaction-type: rocket
-
-      # Get the branch name
       - name: Get the target branch name
         id: vars
         run: |
           branch=${{ github.event.client_payload.slash_command.args.named.branch }}
           if [[ -z "$branch" ]]; then branch="main"; fi
           echo ::set-output name=branch::$branch
-
-      # Checkout the branch to test
       - name: Checkout the branch to test
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
           ref: ${{ steps.vars.outputs.branch }}
-
-      # Execute scripts, tools or actions
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -45,9 +38,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: mvn --batch-mode package dockerfile:push@test-env
-
-      # Add reaction to the comment
-      - name: Add reaction
+      - name: Add success reaction
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
