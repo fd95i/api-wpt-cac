@@ -1,12 +1,12 @@
-name: Slash Command Dispatch
+name: Comment Dispatch
 on:
   issue_comment:
     types: [created]
 jobs:
-  slashCommandDispatch:
+  dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Slash Command Dispatch
+      - name: Comment Dispatch
         uses: peter-evans/slash-command-dispatch@v2
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
