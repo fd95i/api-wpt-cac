@@ -41,10 +41,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
-      - name: Prepare release
+      - name: Build and Push Docker TEST image
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        run: mvn --batch-mode package dockerfile:push@tag-latest
+        run: mvn --batch-mode package dockerfile:push@test-env
 
       # Add reaction to the comment
       - name: Add reaction

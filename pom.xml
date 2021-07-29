@@ -114,6 +114,15 @@
 							<tag>latest</tag>
 						</configuration>
 					</execution>
+					<execution>
+						<id>test-env</id>
+						<goals>
+							<goal>build</goal>
+						</goals>
+						<configuration>
+							<tag>test</tag>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration>
 					<!--suppress UnresolvedMavenProperty -->
