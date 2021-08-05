@@ -35,7 +35,7 @@ public class ContactController {
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Contact c) {
         contactRepository.save(c);
-        SendContactMail.dispatch(c);
+//        SendContactMail.dispatch(c);
     }
 
     @PutMapping
