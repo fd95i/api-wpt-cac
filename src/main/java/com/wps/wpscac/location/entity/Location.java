@@ -14,7 +14,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Entity
 public class Location {
-
     @Id
     @Column(name = "location_id")
     @JsonProperty("id_sucursal")
