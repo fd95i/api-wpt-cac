@@ -22,7 +22,4 @@ public class Contact {
     @JsonProperty(value = "Correo")
     @Column(name = "Correo")
     private String email;
-    @JsonProperty(value = "Contraseña")
-    @Column(name = "Contraseña")
-    private String password;
 }

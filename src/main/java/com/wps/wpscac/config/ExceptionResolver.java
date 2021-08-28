@@ -23,11 +23,6 @@ public class ExceptionResolver extends DefaultHandlerExceptionResolver {
         return ApiError.forException(e, HttpStatus.NOT_FOUND.value(), req);
     }
 
-    @Override
-    protected ModelAndView handleTypeMismatch(TypeMismatchException ex, HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
-        return super.handleTypeMismatch(ex, request, response, handler);
-    }
-
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<Object> handle(Exception e, HttpServletRequest req) {
         return ApiError.forException(e, HttpStatus.INTERNAL_SERVER_ERROR.value(), req);
