@@ -1,6 +1,9 @@
 FROM openjdk:8-jdk-alpine
 ARG JAR_FILE=target/wps-cac-api.jar
-
+ENV WPTCAC_DATABASE_IP localhost
+ENV WPTCAC_DATABASE_PORT 3306
+ENV WPTCAC_DATABASE_USER root
+ENV WPTCAC_DATABASE_PASSWORD root
 COPY ${JAR_FILE} app.jar
 WORKDIR /app
 ENTRYPOINT ["java","-jar","/app.jar"]
