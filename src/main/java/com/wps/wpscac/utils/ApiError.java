@@ -40,7 +40,7 @@ public class ApiError {
             log.error("------------------- AN EXCEPTION OCCURRED ---------------------------");
             log.error("Request URL: " + req.getRequestURL() + ", Method: " + req.getMethod());
             log.error("Status resolved: " + HttpStatus.resolve(status));
-            log.error("Exception Cause: " + e.getClass().getSimpleName());
+            log.error("Exception Cause: " + e.getClass().getSimpleName()    );
             log.error("Exception Message: " + e.getMessage());
             log.error("Request Body: " );
             for(String s : IOUtils.toString(req.getInputStream(), Charset.defaultCharset()).split("\n"))
