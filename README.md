@@ -14,7 +14,7 @@ Hey! This repository represents the Backend structure of Willow Patisserie. In o
 
 	 `docker pull fd95i/api-wptcac:latest`
  
- 3. Let's get to the .env file. We need to create this file in order to authenticate us to the MySQL database we just created minutes ago. In the root of this project there is an example .env file that contains the following variables, just download it and complete them with your data:
+ 3. Let's get to the .env file. We need to create this file in order to authenticate us to the MySQL database we just created minutes ago. In the root of this project there is an example .env file that contains the following variables, just download that file and complete the keys with your values:
  
 	|  Key | Value(i.e) |
 	|-------------------------|--------|
