@@ -49,6 +49,6 @@ public class SendContactMail implements Runnable {
     }
 
     public static final void dispatch(final Contact info) {
-        new Thread(new SendContactMail(info)).run();
+        new Thread(new SendContactMail(info)).start();
     }
 }
